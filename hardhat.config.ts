@@ -4,6 +4,7 @@ import { NetworkUserConfig } from 'hardhat/types'
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-etherscan'
 import '@nomicfoundation/hardhat-toolbox'
+import 'hardhat-circom'
 
 import { config as dotenvConfig } from 'dotenv'
 import { resolve } from 'path'
@@ -95,6 +96,15 @@ const config: HardhatUserConfig = {
       polygonMumbai: process.env.POLYGONSCAN_API_KEY || '',
       chiadoTestnet: process.env.CHIADOSCAN_API_KEY || '',
     },
+  },
+  circom: {
+    inputBasePath: './circuits',
+    ptau: "https://hermezptau.blob.core.windows.net/ptau/powersOfTau28_hez_final_15.ptau",
+    circuits: [
+      {
+        name: "hash",
+      },
+    ],
   },
   gasReporter: {
     currency: 'USD',

@@ -5,3 +5,8 @@ node_modules
 cache
 typechain
 typechain/*
+artifacts
+
+# hardhat circom
+circuits/*.r1cs
+circuits/*.vkey.json
