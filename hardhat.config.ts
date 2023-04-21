@@ -40,7 +40,7 @@ function getChainConfig (chain: keyof typeof chainIds): NetworkUserConfig {
     case 'chiado-testnet':
       jsonRpcUrl = 'https://rpc.chiado.gnosis.gateway.fm'
       break
-      case 'quorum':
+    case 'quorum':
       jsonRpcUrl = `http://${process.env.QUORUM_URL}:8545`
       break
     default:
