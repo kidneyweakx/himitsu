@@ -12,4 +12,4 @@ circuits/*.r1cs
 circuits/*.vkey.json
 
 .DS_Store
-/metadata
+scripts/metadata
