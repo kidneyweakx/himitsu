@@ -8,7 +8,10 @@ import 'hardhat-circom'
 
 import { config as dotenvConfig } from 'dotenv'
 import { resolve } from 'path'
+import { loadTasks } from './helpers/hardhatConfig'
 
+const taskFolders = ['tasks']
+loadTasks(taskFolders)
 dotenvConfig({ path: resolve(__dirname, './.env') })
 
 const chainIds = {
@@ -17,6 +20,7 @@ const chainIds = {
   hardhat: 31337,
   'chiado-testnet': 10200,
   'polygon-mumbai': 80001,
+  quorum: 81712,
 }
 
 // Ensure that we have all the environment variables we need.
@@ -36,6 +40,9 @@ function getChainConfig (chain: keyof typeof chainIds): NetworkUserConfig {
     case 'chiado-testnet':
       jsonRpcUrl = 'https://rpc.chiado.gnosis.gateway.fm'
       break
+      case 'quorum':
+      jsonRpcUrl = `http://${process.env.QUORUM_URL}:8545`
+      break
     default:
       jsonRpcUrl = `https://${chain}.infura.io/v3/${infuraApiKey}`
   }
@@ -47,18 +54,19 @@ function getChainConfig (chain: keyof typeof chainIds): NetworkUserConfig {
 }
 
 const config: HardhatUserConfig = {
-  defaultNetwork: 'hardhat',
+  defaultNetwork: 'quorum',
   networks: {
-    hardhat: {
-      chainId: chainIds.hardhat,
-    },
-    local: {
-      url: 'http://127.0.0.1:8545',
-    },
+    // hardhat: {
+    //   chainId: chainIds.hardhat,
+    // },
+    // local: {
+    //   url: 'http://127.0.0.1:8545',
+    // },
     mainnet: getChainConfig('mainnet'),
     goerli: getChainConfig('goerli'),
     'chiado-testnet': getChainConfig('chiado-testnet'),
     'polygon-mumbai': getChainConfig('polygon-mumbai'),
+    quorum: getChainConfig('quorum'),
   },
   paths: {
     artifacts: './artifacts',
