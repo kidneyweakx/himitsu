@@ -16,7 +16,7 @@ async function main() {
     WALLET
   )
 
-  const m = await membership.checkRegister2(81712, 43);
+  const m = await membership.checkRegister2(81712, 51);
   await m.wait()
   console.log(m)
     console.log('emit cross chain event')

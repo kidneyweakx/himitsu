@@ -1,7 +1,7 @@
 export const contractAbi = require('../artifacts/contracts/membership.sol/Membership.json')
 export const quorumConfig = {
-  contractAddress: '0x4f4847786Dbf20b8E3428A182987ac9bA438fa67',
-  contractAddress2: '0x02f20583bd45beab91a97aE12f8C3581026C6113'
+  contractAddress: '0xE6C1bc6697C1cae1C64084Fa5490fc6d2F942b10',
+  contractAddress2: '0x61b35D86a143ef06f28D648DFB40DCeBf8dFC6A3'
 }
 
 export const chiadoConfig = {
