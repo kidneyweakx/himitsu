@@ -17,7 +17,7 @@ async function main() {
 
   eventContract.on("NewMember", async (memberAddress, member) => {
     const blockNum = await quorum.getBlockNumber()
-    // console.log(`BlockNumber: ${await quorum.getBlockNumber()}`)
+    console.log(`BlockNumber: ${blockNum}`)
     const block = await quorum.getBlock(blockNum)
     // console.log(block.hash)
     const feeData = await chiado.getFeeData()
