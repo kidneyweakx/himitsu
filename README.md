@@ -4,7 +4,7 @@
 
 ## Deployed Contract Address
 
-Quorum Membership : 0x9bd5E525EA621B917960ED762583715A11fC1B0D
+Quorum Membership : 0x87D6963aD73e1cea858986fEbC8D425Ee87a86b5
 
 ## Hashi
 

@@ -7,17 +7,15 @@ contract Membership {
         bool isActive;
     } 
 
-    bytes32 public merkleRoot;
     mapping (address => memberInfo) public memberDB;
 
-    event NewMember(address memberAddress, memberInfo member, bytes32 merkleRoot);    
+    event NewMember(address memberAddress, memberInfo member);    
     
-    function register(address _memberAddress, string memory _name, bytes32 _merkleRoot) public {
+    function register(address _memberAddress, string memory _name) public {
       //TODO: add hashiQ check
         memberDB[_memberAddress].name = _name;
         memberDB[_memberAddress].isActive = true;
-        merkleRoot = _merkleRoot;
-        emit NewMember(_memberAddress, memberDB[_memberAddress], merkleRoot);
+        emit NewMember(_memberAddress, memberDB[_memberAddress]);
     }
 
     function checkMember(address _memberAddress) public view returns(bool){
