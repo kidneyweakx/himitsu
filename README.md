@@ -8,9 +8,11 @@ A Private Chain communication architecture using [Gnosis Hashi](https://github.c
 
 
 ### Deployed Contract Address
+Quroum Verifier: 0x31a9B7a5473D2198ae01fdfeBf221801aCFc7c5e
+Quorum Membership : 0xaA6B59EE03fB27b7738B179144537614ca0225e6
 
-Quorum Membership : 0x87D6963aD73e1cea858986fEbC8D425Ee87a86b5
-Quorum2 Membership :
+Quroum2 Verifier: 0x9bd5E525EA621B917960ED762583715A11fC1B0D
+Quorum2 Membership : 0x42A69e89610e9EF792E6883a219881d14f73414b
 ## Hashi
 
 - Gnosis Chiado Hashi: 0xfF75f4e4f7D37A7864E5e003F0E87a72F878cc6E

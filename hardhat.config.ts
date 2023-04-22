@@ -21,6 +21,7 @@ const chainIds = {
   'chiado-testnet': 10200,
   'polygon-mumbai': 80001,
   quorum: 81712,
+  quorum2: 81717
 }
 
 // Ensure that we have all the environment variables we need.
@@ -42,6 +43,9 @@ function getChainConfig (chain: keyof typeof chainIds): NetworkUserConfig {
       break
     case 'quorum':
       jsonRpcUrl = `http://${process.env.QUORUM_URL}:8545`
+      break
+    case 'quorum2':
+      jsonRpcUrl = `http://${process.env.QUORUM_URL2}:8545`
       break
     default:
       jsonRpcUrl = `https://${chain}.infura.io/v3/${infuraApiKey}`
@@ -67,6 +71,7 @@ const config: HardhatUserConfig = {
     'chiado-testnet': getChainConfig('chiado-testnet'),
     'polygon-mumbai': getChainConfig('polygon-mumbai'),
     quorum: getChainConfig('quorum'),
+    quorum2: getChainConfig('quorum2'),
   },
   paths: {
     artifacts: './artifacts',

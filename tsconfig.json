@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
+    "allowJs": false,
     "declaration": true,
     "declarationMap": true,
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "useDefineForClassFields": true,
     "lib": ["es6"],
     "module": "commonjs",
     "moduleResolution": "node",

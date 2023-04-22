@@ -6,6 +6,7 @@
   "scripts": {
     "relayer:quorum": "ts-node ./scripts/Relayer/quorumRelayer.ts",
     "relayer:fabric": "ts-node ./scripts/Relayer/fabricRelayer.ts",
+    
     "hardhat:clean": "rm -rf typechain cache artifacts",
     "hardhat:compile": "hardhat compile",
     "circom:dev": "hardhat circom --deterministic --debug --verbose"

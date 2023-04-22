@@ -5,7 +5,7 @@ import "./interfaces/IHashiQ.sol";
 abstract contract HashiQ is IHashiQ{
   mapping (address => string) public hashiQDB;
 
-  function hashiQuery(string memory _msgId) external{
+  function hashiQuery(string calldata _msgId) external{
     emit newHashiQ(msg.sender, _msgId);
   }
 

@@ -7,7 +7,7 @@ import { resolve } from 'path'
 dotenvConfig({ path: resolve(__dirname, '../../.env') })
 
 async function main() {
-  const quorum = new ethers.providers.JsonRpcProvider("http://localhost:8545")
+  const quorum = new ethers.providers.JsonRpcProvider(`http://${process.env.QUORUM_URL}:8545`)
   const eventContract = new ethers.Contract(quorumConfig.contractAddress, contractAbi.abi, quorum)
   
   // use chiado as cosmos hub
@@ -17,9 +17,8 @@ async function main() {
 
   eventContract.on("NewMember", async (memberAddress, member) => {
     const blockNum = await quorum.getBlockNumber()
-    console.log(`BlockNumber: ${blockNum}`)
     const block = await quorum.getBlock(blockNum)
-    // console.log(block.hash)
+    console.log(`BlockNumber: ${blockNum}, BlockHash: ${block.hash}`)
     const feeData = await chiado.getFeeData()
     const o = await oracle.blockHash(81712, [blockNum, block.hash],{
       maxPriorityFeePerGas: feeData.maxPriorityFeePerGas?.mul(2),
