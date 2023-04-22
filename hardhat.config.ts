@@ -8,7 +8,7 @@ import 'hardhat-circom'
 
 import { config as dotenvConfig } from 'dotenv'
 import { resolve } from 'path'
-import { loadTasks } from './helpers/hardhatConfig'
+import { loadTasks } from './scripts/helpers/hardhatConfig'
 
 const taskFolders = ['tasks']
 loadTasks(taskFolders)

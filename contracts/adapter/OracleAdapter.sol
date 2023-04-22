@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: LGPL-3.0-only
 pragma solidity ^0.8.17;
 
-import "./interfaces/IOracleAdapter.sol";
+import "../interfaces/IOracleAdapter.sol";
 
-contract OracleAdapter is IOracleAdapter {
+abstract contract OracleAdapter is IOracleAdapter {
     mapping(uint256 => mapping(uint256 => bytes32)) public hashes;
 
     /// @dev Returns the hash for a given domain and ID, as reported by the oracle.
