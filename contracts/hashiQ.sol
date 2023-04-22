@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import "./interfaces/IHashiQ.sol";
 contract HashiQ is IHashiQ{
   mapping (address => string) public hashiQDB;
-
+  
   function hashiQuery(string memory _msgId) external{
     emit newHashiQ(msg.sender, _msgId);
   }

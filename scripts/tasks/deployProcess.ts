@@ -10,10 +10,10 @@ task("deploy:membership").setAction(async function (taskArguments: TaskArguments
   console.log("contract deployed to: ", contract.address)
 })
 
-task("deploy:blockHash").setAction(async function (taskArguments: TaskArguments, { ethers }) {
+task("deploy:oracle").setAction(async function (taskArguments: TaskArguments, { ethers }) {
   const feeData = await ethers.provider.getFeeData()
   const signers: SignerWithAddress[] = await ethers.getSigners()
-  const Factory: any = await ethers.getContractFactory("BlockHashOracleAdapter")
+  const Factory: any = await ethers.getContractFactory("EasyOracleAdapter")
   const contract: any = await Factory.connect(signers[0]).deploy({
     maxPriorityFeePerGas: feeData.maxPriorityFeePerGas as any,
     maxFeePerGas: feeData.maxFeePerGas as any,
