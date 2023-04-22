@@ -6,7 +6,7 @@ import { resolve } from 'path'
 dotenvConfig({ path: resolve(__dirname, '../.env') })
 
 async function main() {
-  const quorum = new ethers.providers.JsonRpcProvider(`http://${process.env.QUORUM_URL}:8545`)
+  const quorum = new ethers.providers.JsonRpcProvider(`http://${process.env.QUORUM_URL2}:8545`)
   const feeData = await quorum.getFeeData()
   const WALLET = new ethers.Wallet(process.env.PRIVATE_KEY as BytesLike, quorum)
 
@@ -15,8 +15,11 @@ async function main() {
     MembershipAbi.abi,
     WALLET
   )
-  await membership.checkRegister()
 
+  const m = await membership.checkRegister2(81712, 43);
+  await m.wait()
+  console.log(m)
+    console.log('emit cross chain event')
 }
 
 main()

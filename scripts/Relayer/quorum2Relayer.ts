@@ -10,21 +10,25 @@ async function main() {
   const quorum = new ethers.providers.JsonRpcProvider(`http://${process.env.QUORUM_URL2}:8545`)
   const eventContract = new ethers.Contract(quorumConfig.contractAddress2, contractAbi.abi, quorum)
   
+
   // use chiado as cosmos hub
   const chiado = new ethers.providers.JsonRpcProvider("https://rpc.chiado.gnosis.gateway.fm")
   const WALLET = new ethers.Wallet(process.env.PRIVATE_KEY as BytesLike, chiado)
   const giri = new ethers.Contract(chiadoConfig.girigiribashi, GiriGiriABI.abi, WALLET)
   const feeData = await chiado.getFeeData()
-    const o = await giri.getHash(81712, 35, [chiadoConfig.oracle],{
+  // eventContract.on("NewMember", async (memberAddress, member) => {
+  //   console.log('get event')
+  // })
+  eventContract.on('MemberCheck', async (id, num) => {
+    console.log('get Message Event')
+    const o = await giri.getHash(id, num, [chiadoConfig.oracle], {
       maxPriorityFeePerGas: feeData.maxPriorityFeePerGas?.mul(2),
       maxFeePerGas: feeData.maxFeePerGas?.mul(2),
       gasLimit: 4000000,
     })
     // await o.wait()
     console.log(o)
-  // eventContract.on("MessageDispatched", async (address, chainId, hash, blockHash) => {
-    
-  // })
+  })
 
 }
 

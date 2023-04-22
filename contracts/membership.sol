@@ -30,6 +30,7 @@ contract Membership{
     mapping (address => uint) public hashDB;
     mapping (uint => bool) public hashValid;
 
+    event MemberCheck(uint256 chainId, uint256 blockNum);
     event NewMember(address memberAddress, memberInfo member);    
     
     function verifyProof(ProofData memory proofData) public view returns (bool) {
@@ -57,11 +58,19 @@ contract Membership{
     }
 
     function checkRegister(uint hash, uint256 chainId, bytes32 blockHash) external{
+        require(memberDB[msg.sender].isActive == false, 'is member');
         emit MessageDispatched(
             msg.sender,
             chainId,
             hash,
             blockHash
+        );
+    }
+
+    function checkRegister2(uint256 chainId, uint256 blockNum) external{
+        emit MemberCheck(
+            chainId,
+            blockNum
         );
     }
     function setHashValid(uint hash) external {

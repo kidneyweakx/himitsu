@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "relayer:quorum": "ts-node ./scripts/Relayer/quorumRelayer.ts",
+    "relayer:quorum2": "ts-node ./scripts/Relayer/quorum2Relayer.ts",
+    "demo:generate": "ts-node ./scripts/ZK/generateProof.ts",
     "relayer:fabric": "ts-node ./scripts/Relayer/fabricRelayer.ts",
     
     "hardhat:clean": "rm -rf typechain cache artifacts",
