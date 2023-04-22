@@ -1,12 +1,16 @@
-# Himitsu 秘密
+# 🤫🤫🤫 Himitsu 秘密 🤫🤫🤫
 
-Using 
-| ⚠️ Warning: project in hackathon, not audit, not safu
+| **⚠️ Warning: project in hackathon, not audit, not safu ⚠️**
 
-## Deployed Contract Address
+A Private Chain communication architecture using [Gnosis Hashi](https://github.com/gnosis/hashi) 
+
+## Description
+
+
+### Deployed Contract Address
 
 Quorum Membership : 0x87D6963aD73e1cea858986fEbC8D425Ee87a86b5
-
+Quorum2 Membership :
 ## Hashi
 
 - Gnosis Chiado Hashi: 0xfF75f4e4f7D37A7864E5e003F0E87a72F878cc6E
@@ -17,3 +21,12 @@ Quorum Membership : 0x87D6963aD73e1cea858986fEbC8D425Ee87a86b5
 Using ERC-5164
 
 https://eips.ethereum.org/EIPS/eip-5164
+
+### how to use
+
+1. start relayer Quorum <> Chiado
+2. setup the cross chain oracle interface (only setup once)
+3. send transaction (event HashiQ)
+
+## 🤫Himitsu🤫
+![](./himitsu.jpg)
