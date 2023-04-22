@@ -1,11 +1,8 @@
-# 🤫🤫🤫 Himitsu 秘密 🤫🤫🤫
+# 🤫 Himitsu 秘密 🤫
 
 | **⚠️ Warning: project in hackathon, not audit, not safu ⚠️**
 
 A Private Chain communication architecture using [Gnosis Hashi](https://github.com/gnosis/hashi) 
-
-## Description
-
 
 ### Deployed Contract Address
 Quroum Verifier: 0x31a9B7a5473D2198ae01fdfeBf221801aCFc7c5e
@@ -30,5 +27,6 @@ https://eips.ethereum.org/EIPS/eip-5164
 2. setup the cross chain oracle interface (only setup once)
 3. send transaction (event HashiQ)
 
-## 🤫Himitsu🤫
+## 🤫Himitsu Overview🤫
+![](./architecture.png)
 ![](./himitsu.jpg)
